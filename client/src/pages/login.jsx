@@ -3,20 +3,24 @@ import { signInWithEmailAndPassword } from 'firebase/auth'; // Correct import
 import { auth } from '../firebase';
 
 function MyLoginPage() {
-  const [values, setValues] = useState({ text: '', password: '' });
+  const [text, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+       
 
-  const handleSubmission = () => {
-    if (!values.text || !values.password) {
+  const handleSubmission = async(e) => {
+    if (!text || !password) {
       alert('Enter email id and password');
     } else {
-      signInWithEmailAndPassword(auth, values.text, values.password) // Use 'signInWithEmailAndPassword' from 'auth'
+      e.preventDefault();
+      await signInWithEmailAndPassword(auth,text,password) // Use 'signInWithEmailAndPassword' from 'auth'
         .then((userCredential) => {
           // User is signed in.
           const user = userCredential.user;
+          console.log(user);
           alert('Authenticated');
         })
         .catch((err) => {
-          alert('Wrong email id and password');
+          alert(' Wrong ');
         });
     }
   };
@@ -108,11 +112,11 @@ function MyLoginPage() {
          
           <form style={formStyle}>
             <input type="text" placeholder="Email" style={inputStyle} 
-            onChange={(event)=>setValues((prev)=> ({...prev, text: event.target.value}))
+            onChange={(event)=>setEmail((prev)=> ({...prev, text: event.target.text}))
             }
             />
             <input type="password" placeholder="Password" style={inputStyle} 
-            onChange={(event)=>setValues((prev)=> ({...prev, password: event.target.value}))
+            onChange={(event)=>setPassword((prev)=> ({...prev, password: event.target.password}))
             }
             />
             <button type="submit" style={buttonStyle}

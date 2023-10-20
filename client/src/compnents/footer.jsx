@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faYoutube,
+  faFacebook,
+  faTwitter,
+  faInstagram
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -26,9 +33,21 @@ const Footer = () => {
           <h3>FOLLOW US</h3>
           <ul>
             <li>
-              <a href="#">
-                <i className="fa fa-facebook"></i>
-              </a>
+            <a href="https://www.youtube.com/"
+        className="youtube social">
+        <FontAwesomeIcon icon={faYoutube} size="2x" />
+      </a>
+      <a href="https://www.facebook.com/"
+        className="facebook social">
+        <FontAwesomeIcon icon={faFacebook} size="2x" />
+      </a>
+      <a href="https://www.twitter.com/" className="twitter social">
+        <FontAwesomeIcon icon={faTwitter} size="2x" />
+      </a>
+      <a href="https://www.instagram.com/"
+        className="instagram social">
+        <FontAwesomeIcon icon={faInstagram} size="2x" />
+      </a>
             </li>
           </ul>
         </div>
@@ -38,7 +57,7 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.div`
-  background-color: rgba(7, 70, 91, 0.3333);
+  background-color: grey;
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -71,6 +90,11 @@ const StyledFooter = styled.div`
 
   .footer-column li {
     margin-bottom: 10px;
+    
+  }
+  .footer-column li a {
+    margin-bottom: 10px;
+    padding: 20px;
   }
 
   .footer-column a {

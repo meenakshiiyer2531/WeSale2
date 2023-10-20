@@ -2,9 +2,9 @@ import React from 'react';
 
 function Header() {
   const headerStyle = {
-    backgroundColor: 'rgba(7, 70, 91, 0.3333)',
+    backgroundColor: 'grey',
     color: '#fff', 
-    padding: '10px',
+    padding: '0px',
     display: 'flex',
     justifyContent: 'space-between', 
     alignItems: 'center', 
@@ -18,14 +18,17 @@ function Header() {
   };
 
   const liStyle = {
+  
     margin: '0 15px',
     cursor: 'pointer',
   };
 
+
   const logoStyle = {
-    width: '150px', 
-    height: '60px',
-    marginRight: '100px', 
+    width: '190px', 
+    height: '90px',
+    marginRight: '70px', 
+    marginLeft: '20px',
   };
 
   return (
@@ -35,13 +38,16 @@ function Header() {
         alt="Your Logo"
         style={logoStyle}
       />
+    
       <ul style={navStyle}>
         <li style={liStyle}>Help</li>
         <li style={liStyle}>Login</li>
         {/* <li style={liStyle}>Contact</li> */}
       </ul>
+    
     </header>
   );
 }
+
 
 export default Header;
