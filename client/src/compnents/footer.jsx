@@ -38,7 +38,7 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.div`
-  background-color: grey;
+  background-color: rgba(7, 70, 91, 0.3333);
   color: #fff;
   padding: 20px 0;
   text-align: center;
