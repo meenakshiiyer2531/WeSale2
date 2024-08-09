@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Ensure that the body and html take up full height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Allows main content to grow and push footer down */
+}
+
+Footer {
+  margin-top: auto; /* Pushes the footer to the bottom of the page */
+}
+
+
+/* Ensure the footer does not move up when content is shorter */
+Footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+  position: relative; /* Ensure it's positioned normally */
+}
+

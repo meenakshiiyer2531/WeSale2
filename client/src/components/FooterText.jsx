@@ -57,7 +57,7 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.div`
-  background-color: grey;
+  background-color: #91a5b7;
   color: #fff;
   padding: 20px 0;
   text-align: center;
